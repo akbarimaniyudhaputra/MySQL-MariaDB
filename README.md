@@ -45,6 +45,7 @@ Show tables;
 
 #### Perintah untuk membuat table
 ```http
+CREATE TABLE nama_tabel
 (
 	Nama_Variabel1	type_data,
 	Nama_Variabel2	type_data,
