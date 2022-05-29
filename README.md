@@ -37,11 +37,15 @@ Use nama_database;
 ```http
 SHOW ENGINES;
 ```
+###
+![baris 1](https://user-images.githubusercontent.com/86678205/154797720-f6c8c947-9afc-4e71-a751-47e227704d77.PNG)
 
 #### Perintah untuk melihat table
 ```http
 Show tables;
 ```
+###
+![baris 3-11](https://user-images.githubusercontent.com/86678205/154797722-55fbe0f1-fb4f-47c9-b80e-40dd70d4fa51.PNG)
 
 #### Perintah untuk membuat table
 ```http
@@ -57,18 +61,35 @@ CREATE TABLE nama_tabel
 ```http
 DESC nama_tabel;
 ```
+atau
+```http
+DESCIBE nama_tabel;
+```
+###
+![baris 13](https://user-images.githubusercontent.com/86678205/154797723-48bca3d1-91db-4c62-8d6a-2144bdac0de5.PNG)
+
+#### Perintah untuk melihat struktur table bentuk lain
+```http
+SHOW CREATE TABLE nama_tabel;
+```
+###
+![baris 15](https://user-images.githubusercontent.com/86678205/154797724-cb10227d-50b5-4d1e-aed7-834b1e7d0af7.PNG)
 
 #### Perintah untuk mengubah/modifikasi table (menambah kolom & tipe datanya)
 ```http
 ALTER TABLE nama_table 
 	ADD COLUMN nama_column type_data;
 ```
+###
+![baris 17-18](https://user-images.githubusercontent.com/86678205/154797725-a016b78b-92f8-48f7-8988-05f8c5bfcd2e.PNG)
 
 #### Perintah untuk mengubah/modifikasi table (menghapus kolom)
 ```http
 ALTER TABLE nama_table 
 	DROP COLUMN nama_column;
 ```
+###
+![baris 22-26](https://user-images.githubusercontent.com/86678205/154797726-b06ac6b9-9582-47e8-9bd8-6e168500b443.PNG)
 
 #### Perintah untuk mengubah/modifikasi table (merubah nama kolom)
 ```http
@@ -76,17 +97,21 @@ ALTER TABLE nama_table
 	RENAME COLUMN nama_column TO nama_column_baru;
 ```
 
-#### Perintah untuk mengubah/modifikasi table (merubah tipe datanya & posisi kolom diubah menjadi setelah kolom jumlah)
+#### Perintah untuk mengubah/modifikasi table (merubah tipe datanya & posisi kolom diubah menjadi setelah kolom deskripsi)
 ```http
 ALTER TABLE nama_table  
-	MODIFY	nama_column type_data AFTER jumlah;;
+	MODIFY	nama_column type_data AFTER deskripsi;
 ```
+###
+![baris 28-29](https://user-images.githubusercontent.com/86678205/154797727-27dd20ae-23da-48f5-80ee-0488c89d1799.PNG)
 
 #### Perintah untuk mengubah/modifikasi table (merubah tipe datanya & posisi kolom diubah menjadi paling depan)
 ```http
 ALTER TABLE nama_table 
 	MODIFY	nama_column type_data FIRST;
 ```
+###
+![baris 33-34](https://user-images.githubusercontent.com/86678205/154797728-4a66c9e4-7800-433a-be04-0d00ee60f8cd.PNG)
 
 #### Perintah untuk mengubah/modifikasi table (NULL Value)
 - NB : Jika tidak ingin menerima nilai NULL, tambahkan NOT NULL setelah tipe data ketika membuat kolom atau jika terlanjur sudah terbuat gunakan perintah berikut
@@ -94,6 +119,10 @@ ALTER TABLE nama_table
 ALTER TABLE nama_table  
 	MODIFY	nama_column type_data not null;
 ```
+###
+![baris 40-41](https://user-images.githubusercontent.com/86678205/154797729-547a162b-5dfc-4a3f-9ead-e51dd1c4a748.PNG)
+###
+![baris 45-46](https://user-images.githubusercontent.com/86678205/154797730-1b859963-7c1e-420d-90d5-19a23c3d8c94.PNG)
 
 #### Perintah untuk mengubah/modifikasi table (Default Value)
 - NB : kolom yang tidak diberi nilai secara otomatis nilanya NULL, jika tidak ingin NULL kita tambahkan perintah DEFAULT beserta nilainya
@@ -101,6 +130,10 @@ ALTER TABLE nama_table
 ALTER TABLE nama_table  
 	MODIFY	nama_column type_data not null default 0;
 ```
+###
+![baris 50-51](https://user-images.githubusercontent.com/86678205/154797731-c23f380f-98c3-4275-8611-440597fa0cd2.PNG)
+###
+![baris 55-56](https://user-images.githubusercontent.com/86678205/154797732-f578db9f-ccc4-4117-b31c-ca08c83c3b6a.PNG)
 
 #### Perintah untuk menghapus/membuat ulang table
 - NB : Menghapus semua datanya kemudian tablenya dibuat ulang, jadi tabelnya masih ada
@@ -118,6 +151,12 @@ DROP TABLE nama_tabel;
  - Menyebutkan kolom mana yang akan diisi, jika tidak maka NULL kecuali ada DEFAULT VALUE
  - Gunakan perintah UNSIGNED jika ingin angka tidak boleh negatif
 
+Terlebih dahulu kita membuat table baru/tambahan
+###
+![baris 1-9](https://user-images.githubusercontent.com/86678205/154797786-e5db601d-d0b1-471f-87c5-732a4ecd5d81.PNG)
+###
+![baris 3-11](https://user-images.githubusercontent.com/86678205/154797722-55fbe0f1-fb4f-47c9-b80e-40dd70d4fa51.PNG)
+
  #### Perintah untuk memasukkan data
 ```http
 INSERT INTO nama_tabel(nama_column1, nama_column2, nama_column3)
@@ -134,11 +173,25 @@ VALUES(NilaiUntukColumn1, NilaiUntukColumn2, NilaiUntukColumn3);
 ```http
 SELECT * FROM nama_table;
 ```
+###
+![baris 13](https://user-images.githubusercontent.com/86678205/154797723-48bca3d1-91db-4c62-8d6a-2144bdac0de5.PNG)
+###
+![baris 15-19](https://user-images.githubusercontent.com/86678205/154797790-84b09953-5eb1-4dc8-a7f5-af3809e10db0.PNG)
 
  #### perintah untuk mengambil data di sebagian kolom
 ```http
+SELECT DISTINCT nama_column1, nama_column2 FROM nama_table;
+```
+dan
+```http
 SELECT nama_column1, nama_column2, nama_column3 FROM nama_table;
 ```
+###
+![baris 21-23](https://user-images.githubusercontent.com/86678205/154797791-d97388ed-5248-4e44-bd1f-bf73e65e290a.PNG)
+###
+![baris 38-39](https://user-images.githubusercontent.com/86678205/154797792-6eab80ac-cad7-46d4-a79f-2a78d5851466.PNG)
+###
+![baris 41-42](https://user-images.githubusercontent.com/86678205/154797794-15be359d-31a4-4718-a6bf-4c13ee6744ce.PNG)
 
 ## PRIMARY KEY
  - Kalau tidak ada primary key menyulitkan saat ingin mengetahui informasi ID UNIK dari tiap recordnya
@@ -154,6 +207,8 @@ PRIMARY KEY (nama_column); #menunjuk kolom X sebagai primary key
 ALTER TABLE products
     ADD PRIMARY KEY (nama_column);
 ```
+###
+![baris 44-45](https://user-images.githubusercontent.com/86678205/154797796-d141371e-dc24-42c5-86bd-58631c6f32d7.PNG)
 
 ## WHERE CLAUSE
  - Untuk mencari lebih detail data mana yang ingin kita ambil/tampilkan
@@ -163,12 +218,20 @@ ALTER TABLE products
  - FROM #dari table mana
  - WHERE #nama_column/kolom apa = dengan value apa yang kita cari;
 
+Terlebih dahulu kita menambah data baru/tambahan
+###
+![baris 47-48](https://user-images.githubusercontent.com/86678205/154797797-7ea17474-6d8e-49e3-81dd-6399cc808c9b.PNG)
+
 #### Perintah untuk menampilkan data semua kolom dengan value apa yang dicari
 ```http
 SELECT *
 FROM nama_table
 WHERE nama_column = 'valuenya string';
 ```
+###
+![baris 61-63](https://user-images.githubusercontent.com/86678205/154797801-d65a2287-715b-414b-8743-0cb9f427ccf2.PNG)
+###
+![baris 65-67](https://user-images.githubusercontent.com/86678205/154797803-a48fbb73-3767-446a-a1de-b36341d85ce6.PNG)
 
 #### Perintah untuk menampilkan data sebagian kolom dengan value apa yang dicari
 ```http
@@ -176,6 +239,10 @@ SELECT nama_column1, nama_column2, nama_column3
 FROM  nama_table
 WHERE nama_column = valuenya angka;
 ```
+###
+![baris 54-55](https://user-images.githubusercontent.com/86678205/154797798-c615b766-13fb-4a23-8ec5-7bebdafea68a.PNG)
+###
+![baris 57-59](https://user-images.githubusercontent.com/86678205/154797799-8870b994-0283-4bf6-b1b6-37873fb0d129.PNG)
 
 ## UPDATE
  - Digabung dengan perintah WHERE
