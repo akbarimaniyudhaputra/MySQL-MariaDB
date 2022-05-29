@@ -151,12 +151,6 @@ DROP TABLE nama_tabel;
  - Menyebutkan kolom mana yang akan diisi, jika tidak maka NULL kecuali ada DEFAULT VALUE
  - Gunakan perintah UNSIGNED jika ingin angka tidak boleh negatif
 
-Terlebih dahulu kita membuat table baru/tambahan
-###
-![baris 1-9](https://user-images.githubusercontent.com/86678205/154797786-e5db601d-d0b1-471f-87c5-732a4ecd5d81.PNG)
-###
-![baris 3-11](https://user-images.githubusercontent.com/86678205/154797722-55fbe0f1-fb4f-47c9-b80e-40dd70d4fa51.PNG)
-
  #### Perintah untuk memasukkan data
 ```http
 INSERT INTO nama_tabel(nama_column1, nama_column2, nama_column3)
@@ -173,10 +167,6 @@ VALUES(NilaiUntukColumn1, NilaiUntukColumn2, NilaiUntukColumn3);
 ```http
 SELECT * FROM nama_table;
 ```
-###
-![baris 13](https://user-images.githubusercontent.com/86678205/154797723-48bca3d1-91db-4c62-8d6a-2144bdac0de5.PNG)
-###
-![baris 15-19](https://user-images.githubusercontent.com/86678205/154797790-84b09953-5eb1-4dc8-a7f5-af3809e10db0.PNG)
 
  #### perintah untuk mengambil data di sebagian kolom
 ```http
@@ -186,12 +176,6 @@ dan
 ```http
 SELECT nama_column1, nama_column2, nama_column3 FROM nama_table;
 ```
-###
-![baris 21-23](https://user-images.githubusercontent.com/86678205/154797791-d97388ed-5248-4e44-bd1f-bf73e65e290a.PNG)
-###
-![baris 38-39](https://user-images.githubusercontent.com/86678205/154797792-6eab80ac-cad7-46d4-a79f-2a78d5851466.PNG)
-###
-![baris 41-42](https://user-images.githubusercontent.com/86678205/154797794-15be359d-31a4-4718-a6bf-4c13ee6744ce.PNG)
 
 ## PRIMARY KEY
  - Kalau tidak ada primary key menyulitkan saat ingin mengetahui informasi ID UNIK dari tiap recordnya
@@ -207,8 +191,6 @@ PRIMARY KEY (nama_column); #menunjuk kolom X sebagai primary key
 ALTER TABLE products
     ADD PRIMARY KEY (nama_column);
 ```
-###
-![baris 44-45](https://user-images.githubusercontent.com/86678205/154797796-d141371e-dc24-42c5-86bd-58631c6f32d7.PNG)
 
 ## WHERE CLAUSE
  - Untuk mencari lebih detail data mana yang ingin kita ambil/tampilkan
@@ -218,20 +200,12 @@ ALTER TABLE products
  - FROM #dari table mana
  - WHERE #nama_column/kolom apa = dengan value apa yang kita cari;
 
-Terlebih dahulu kita menambah data baru/tambahan
-###
-![baris 47-48](https://user-images.githubusercontent.com/86678205/154797797-7ea17474-6d8e-49e3-81dd-6399cc808c9b.PNG)
-
 #### Perintah untuk menampilkan data semua kolom dengan value apa yang dicari
 ```http
 SELECT *
 FROM nama_table
 WHERE nama_column = 'valuenya string';
 ```
-###
-![baris 61-63](https://user-images.githubusercontent.com/86678205/154797801-d65a2287-715b-414b-8743-0cb9f427ccf2.PNG)
-###
-![baris 65-67](https://user-images.githubusercontent.com/86678205/154797803-a48fbb73-3767-446a-a1de-b36341d85ce6.PNG)
 
 #### Perintah untuk menampilkan data sebagian kolom dengan value apa yang dicari
 ```http
@@ -239,10 +213,6 @@ SELECT nama_column1, nama_column2, nama_column3
 FROM  nama_table
 WHERE nama_column = valuenya angka;
 ```
-###
-![baris 54-55](https://user-images.githubusercontent.com/86678205/154797798-c615b766-13fb-4a23-8ec5-7bebdafea68a.PNG)
-###
-![baris 57-59](https://user-images.githubusercontent.com/86678205/154797799-8870b994-0283-4bf6-b1b6-37873fb0d129.PNG)
 
 ## UPDATE
  - Digabung dengan perintah WHERE
